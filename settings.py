@@ -13,21 +13,21 @@ ROOT_DIR = os.path.dirname(__file__)
 debug = True
 xsrf_cookies = False
 expire_seconds = 365 * 24 * 60 * 60
-cookie_secret = '61oETzKXQAGaYdkL5gEmGeJJFuYh7EQnp2X6TP1o/Vo='
-token_secret = "pXFb4i%*834gfdh96(3df&%18iodGq4ODQyMzc4lz7yI6ImF1dG"
-secret_key = '8b888a62-3edb-4920-b446-697a472b4001'
+cookie_secret = os.getenv('COOKIE_SECRET', '61oETzKXQAGaYdkL5gEmGeJJFuYh7EQnp2X6TP1o/Vo=')
+token_secret = os.getenv('TOKEN_SECRET', "pXFb4i%*834gfdh96(3df&%18iodGq4ODQyMzc4lz7yI6ImF1dG")
+secret_key = os.getenv('SECRET_KEY', '8b888a62-3edb-4920-b446-697a472b4001')
 
 DEFAULT_DB_DBHOST = os.getenv('DEFAULT_DB_DBHOST', '172.16.0.223')
 DEFAULT_DB_DBPORT = os.getenv('DEFAULT_DB_DBPORT', '3306')
 DEFAULT_DB_DBUSER = os.getenv('DEFAULT_DB_DBUSER', 'root')
 DEFAULT_DB_DBPWD = os.getenv('DEFAULT_DB_DBPWD', 'ljXrcyn7chaBU4F')
-DEFAULT_DB_DBNAME = os.getenv('DEFAULT_DB_DBNAME', 'codo_admin')
+DEFAULT_DB_DBNAME = os.getenv('ADMIN_DB_DBNAME', 'codo_admin')
 
 READONLY_DB_DBHOST = os.getenv('READONLY_DB_DBHOST', '172.16.0.223')
 READONLY_DB_DBPORT = os.getenv('READONLY_DB_DBPORT', '3306')
 READONLY_DB_DBUSER = os.getenv('READONLY_DB_DBUSER', 'root')
 READONLY_DB_DBPWD = os.getenv('READONLY_DB_DBPWD', 'ljXrcyn7chaBU4F')
-READONLY_DB_DBNAME = os.getenv('READONLY_DB_DBNAME', 'codo_admin')
+READONLY_DB_DBNAME = os.getenv('ADMIN_DB_DBNAME', 'codo_admin')
 
 DEFAULT_REDIS_HOST = os.getenv('DEFAULT_REDIS_HOST', '172.16.0.223')
 DEFAULT_REDIS_PORT = os.getenv('DEFAULT_REDIS_PORT', '6379')
