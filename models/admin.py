@@ -45,7 +45,7 @@ class Users(Base):
     username = Column('username', String(50), unique=True)
     password = Column('password', String(100))
     nickname = Column('nickname', String(100))
-    email = Column('email', String(50))  ### 邮箱
+    email = Column('email', String(80), unique=True)  ### 邮箱
     tel = Column('tel', String(11))  ### 手机号
     wechat = Column('wechat', String(50))  ### 微信号
     no = Column('no', String(50))  ### 工号
@@ -53,7 +53,7 @@ class Users(Base):
     google_key = Column('google_key', String(80))  ### 谷歌认证秘钥
     superuser = Column('superuser', String(5), default='10')  ### 超级用户  0代表超级用户
     status = Column('status', String(5), default='0')
-    last_ip = Column('last_ip', String(18), default='')
+    last_ip = Column('last_ip', String(20), default='')
     last_login = Column('last_login', DateTime(), default=datetime.now, onupdate=datetime.now)
     ctime = Column('ctime', DateTime(), default=datetime.now)
 
